@@ -21,3 +21,21 @@ class Node:
 			for child in current.children:
 				queue.append(child)
     return array
+    
+    
+    2. findClosestValueInBst
+    
+    def findClosestValueInBst(tree, target):
+    # Write your code here.
+    return findClosestValueInBstHelper(tree, target, float('inf'))
+def findClosestValueInBstHelper(tree, target, closet):
+	if tree is None:
+		return closet
+	if abs(target - closet) > abs(target - tree.value):
+		closet = tree.value
+	if target < tree.value:
+		return findClosestValueInBstHelper(tree.left, target, closet)
+	elif target > tree.value:
+		return findClosestValueInBstHelper(tree.right, target, closet)
+	else:
+		return closet
