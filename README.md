@@ -39,3 +39,19 @@ def findClosestValueInBstHelper(tree, target, closet):
 		return findClosestValueInBstHelper(tree.right, target, closet)
 	else:
 		return closet
+		
+		
+		
+
+
+
+3. Validate Subsequence
+    def isValidSubsequence(array, sequence):
+    # Write your code here.
+	seqIndx = 0
+	arrayIndx = 0
+	while seqIndx < len(sequence) and arrayIndx < len(array):
+		if sequence[seqIndx] == array[arrayIndx]:
+			seqIndx += 1
+		arrayIndx += 1
+	return seqIndx == len(sequence)
