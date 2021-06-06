@@ -28,6 +28,8 @@ class Node:
     def findClosestValueInBst(tree, target):
     # Write your code here.
     return findClosestValueInBstHelper(tree, target, float('inf'))
+    
+    
 def findClosestValueInBstHelper(tree, target, closet):
 	if tree is None:
 		return closet
@@ -42,9 +44,6 @@ def findClosestValueInBstHelper(tree, target, closet):
 		
 		
 		
-
-
-
 3. Validate Subsequence
     def isValidSubsequence(array, sequence):
     # Write your code here.
@@ -55,3 +54,38 @@ def findClosestValueInBstHelper(tree, target, closet):
 			seqIndx += 1
 		arrayIndx += 1
 	return seqIndx == len(sequence)
+	
+	
+4. SuffixTrie
+
+
+class SuffixTrie:
+    def __init__(self, string):
+        self.root = {}
+        self.endSymbol = "*"
+        self.populateSuffixTrieFrom(string)
+
+    def populateSuffixTrieFrom(self, string):
+        # Write your code here.
+        for i in range(len(string)):
+			self.insertSubstringStartingAt(i, string)
+			
+	def insertSubstringStartingAt(self, i , string):
+		node = self.root
+		for j in range(i,len(string)):
+			letter = string[j]
+			if letter not in node:
+				node[letter] = {}
+			node = node[letter]
+		node[self.endSymbol] = True
+
+    def contains(self, string):
+        # Write your code here.
+        node = self.root
+		for j in range(len(string)):
+			letter = string[j]
+			if letter not in node:
+				return False
+			node = node[letter]
+		return self.endSymbol in node
+
