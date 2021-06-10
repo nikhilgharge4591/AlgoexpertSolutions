@@ -23,7 +23,7 @@ class Node:
     return array
     
     
-    2. findClosestValueInBst
+ 2. findClosestValueInBst
     
     def findClosestValueInBst(tree, target):
     # Write your code here.
@@ -65,12 +65,12 @@ class SuffixTrie:
         self.endSymbol = "*"
         self.populateSuffixTrieFrom(string)
 
-    def populateSuffixTrieFrom(self, string):
+   def populateSuffixTrieFrom(self, string):
         # Write your code here.
         for i in range(len(string)):
 			self.insertSubstringStartingAt(i, string)
 			
-	def insertSubstringStartingAt(self, i , string):
+def insertSubstringStartingAt(self, i , string):
 		node = self.root
 		for j in range(i,len(string)):
 			letter = string[j]
@@ -79,7 +79,7 @@ class SuffixTrie:
 			node = node[letter]
 		node[self.endSymbol] = True
 
-    def contains(self, string):
+  def contains(self, string):
         # Write your code here.
         node = self.root
 		for j in range(len(string)):
