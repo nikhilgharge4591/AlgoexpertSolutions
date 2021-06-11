@@ -105,4 +105,14 @@ class BinaryTree:
         self.value = value
         self.left = None
         self.right = None
+	
+6. Sorted Squared Array
+
+def sortedSquaredArray(array):
+    # Write your code here.
+	sortedArray = []
+    for val in array:
+		sortedArray.append(val * val)
+	sortedArray.sort()
+	return sortedArray
 
