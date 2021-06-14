@@ -116,3 +116,5 @@ def sortedSquaredArray(array):
 	sortedArray.sort()
 	return sortedArray
 
+
+7. FindThree Largest Numbers
