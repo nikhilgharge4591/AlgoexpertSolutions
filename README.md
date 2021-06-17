@@ -118,3 +118,6 @@ def sortedSquaredArray(array):
 
 
 7. FindThree Largest Numbers
+
+8. BST 
+
