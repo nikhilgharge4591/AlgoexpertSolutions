@@ -1,6 +1,6 @@
 # AlgoexpertSolutions
 
-1. BFS Medium Problem:
+1. Breadth First Search Medium Problem:
 
 
 class Node:
